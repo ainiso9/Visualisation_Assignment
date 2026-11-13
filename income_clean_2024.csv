@@ -1,0 +1,163 @@
+state,district,income_median
+Johor,Batu Pahat,7555
+Johor,Johor Bahru,8977
+Johor,Kluang,6158
+Johor,Kota Tinggi,6284
+Johor,Kulai,8406
+Johor,Mersing,5335
+Johor,Muar,7334
+Johor,Pontian,5685
+Johor,Segamat,6451
+Johor,Tangkak,6374
+Kedah,Baling,3367
+Kedah,Bandar Baharu,4310
+Kedah,Kota Setar,5208
+Kedah,Kuala Muda,4953
+Kedah,Kubang Pasu,5312
+Kedah,Kulim,5236
+Kedah,Langkawi,5083
+Kedah,Padang Terap,3954
+Kedah,Pendang,4592
+Kedah,Pokok Sena,5163
+Kedah,Sik,4438
+Kedah,Yan,4695
+Kelantan,Bachok,4187
+Kelantan,Gua Musang,3871
+Kelantan,Jeli,3008
+Kelantan,Kecil Lojing,3385
+Kelantan,Kota Bharu,4729
+Kelantan,Kuala Krai,2994
+Kelantan,Machang,4156
+Kelantan,Pasir Mas,3591
+Kelantan,Pasir Puteh,4853
+Kelantan,Tanah Merah,3638
+Kelantan,Tumpat,3904
+Melaka,Alor Gajah,6308
+Melaka,Jasin,6401
+Melaka,Melaka Tengah,7415
+Negeri Sembilan,Jelebu,3713
+Negeri Sembilan,Jempol,4291
+Negeri Sembilan,Kuala Pilah,3996
+Negeri Sembilan,Port Dickson,5342
+Negeri Sembilan,Rembau,4894
+Negeri Sembilan,Seremban,6472
+Negeri Sembilan,Tampin,4367
+Pahang,Bentong,5015
+Pahang,Bera,4269
+Pahang,Cameron Highlands,5655
+Pahang,Jerantut,4231
+Pahang,Kuantan,5520
+Pahang,Lipis,4611
+Pahang,Maran,4470
+Pahang,Pekan,4344
+Pahang,Raub,4427
+Pahang,Rompin,4760
+Pahang,Temerloh,4595
+Perak,Bagan Datuk,4134
+Perak,Batang Padang,4339
+Perak,Hilir Perak,4347
+Perak,Hulu Perak,3701
+Perak,Kampar,4538
+Perak,Kerian,4554
+Perak,Kinta,5136
+Perak,Kuala Kangsar,3977
+Perak,Manjung,5380
+Perak,Muallim,4856
+Perak,Perak Tengah,4685
+Perak,Selama,3827
+Perak,Larut & Matang,4843
+Pulau Pinang,Barat Daya,8919
+Pulau Pinang,Timur Laut,7745
+Pulau Pinang,S.P.Tengah,6892
+Pulau Pinang,S.P.Utara,6810
+Pulau Pinang,S.P. Selatan,6822
+Sabah,Beaufort,4070
+Sabah,Beluran,4436
+Sabah,Kalabakan,3304
+Sabah,Keningau,4801
+Sabah,Kinabatangan,4897
+Sabah,Kota Belud,3512
+Sabah,Kota Kinabalu,5896
+Sabah,Kota Marudu,2877
+Sabah,Kuala Penyu,3733
+Sabah,Kudat,3249
+Sabah,Kunak,4539
+Sabah,Lahad Datu,5526
+Sabah,Nabawan,4361
+Sabah,Papar,5177
+Sabah,Penampang,6090
+Sabah,Pitas,2785
+Sabah,Putatan,6563
+Sabah,Ranau,3470
+Sabah,Sandakan,5314
+Sabah,Semporna,4059
+Sabah,Sipitang,4606
+Sabah,Tambunan,4854
+Sabah,Tawau,4852
+Sabah,Telupid,4489
+Sabah,Tenom,4161
+Sabah,Tongod,3470
+Sabah,Tuaran,4277
+Sabah,Membakut,4037
+Sarawak,Asajaya,4447
+Sarawak,Bau,4885
+Sarawak,Belaga,3977
+Sarawak,Beluru,4346
+Sarawak,Betong,4074
+Sarawak,Bintulu,8317
+Sarawak,Bukit Mabong,2589
+Sarawak,Dalat,4614
+Sarawak,Daro,3806
+Sarawak,Julau,3264
+Sarawak,Kabong,3407
+Sarawak,Kanowit,3511
+Sarawak,Kapit,3259
+Sarawak,Kuching,6741
+Sarawak,Lawas,3929
+Sarawak,Limbang,4060
+Sarawak,Lundu,3918
+Sarawak,Maradong,3472
+Sarawak,Marudi,4519
+Sarawak,Matu,3891
+Sarawak,Miri,6600
+Sarawak,Mukah,5169
+Sarawak,Pakan,3742
+Sarawak,Pusa,3276
+Sarawak,Samarahan,6785
+Sarawak,Saratok,3418
+Sarawak,Sarikei,4675
+Sarawak,Sebauh,4636
+Sarawak,Selangau,4170
+Sarawak,Serian,4082
+Sarawak,Sibu,5737
+Sarawak,Simunjan,3365
+Sarawak,Song,3052
+Sarawak,Sri Aman,3967
+Sarawak,Subis,5531
+Sarawak,Tanjung Manis,3837
+Sarawak,Tatau,4409
+Sarawak,Tebedu,3024
+Sarawak,Telang Usan,4281
+Sarawak,Lubok antu,4169
+Sarawak,Gedong,3329
+Sarawak,Sebuyau,2717
+Sarawak,Siburan,5217
+Sarawak,Pantu,2525
+Sarawak,Lingga,2999
+Selangor,Gombak,10777
+Selangor,Klang,8837
+Selangor,Kuala Langat,10583
+Selangor,Kuala Selangor,8046
+Selangor,Petaling,10688
+Selangor,Sabak Bernam,6941
+Selangor,Sepang,11131
+Selangor,Ulu Langat,11404
+Selangor,Ulu Selangor,8485
+Terengganu,Besut,5820
+Terengganu,Dungun,7156
+Terengganu,Kemaman,7709
+Terengganu,Kuala Nerus,7304
+Terengganu,Kuala Terengganu,6615
+Terengganu,Marang,6246
+Terengganu,Setiu,6125
+Terengganu,Hulu,6134

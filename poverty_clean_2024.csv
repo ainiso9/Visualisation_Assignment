@@ -1,0 +1,163 @@
+state,district,poverty_relative
+Johor,Batu Pahat,11.6
+Johor,Johor Bahru,9.9
+Johor,Kluang,24.8
+Johor,Kota Tinggi,22.7
+Johor,Kulai,6.3
+Johor,Mersing,25.0
+Johor,Muar,16.1
+Johor,Pontian,25.7
+Johor,Segamat,16.8
+Johor,Tangkak,19.2
+Kedah,Baling,24.0
+Kedah,Bandar Baharu,20.5
+Kedah,Kota Setar,10.4
+Kedah,Kuala Muda,16.5
+Kedah,Kubang Pasu,6.4
+Kedah,Kulim,13.3
+Kedah,Langkawi,8.3
+Kedah,Padang Terap,8.0
+Kedah,Pendang,16.3
+Kedah,Pokok Sena,6.3
+Kedah,Sik,14.3
+Kedah,Yan,13.6
+Kelantan,Bachok,12.1
+Kelantan,Gua Musang,7.5
+Kelantan,Jeli,19.3
+Kelantan,Kecil Lojing,6.7
+Kelantan,Kota Bharu,6.7
+Kelantan,Kuala Krai,22.8
+Kelantan,Machang,10.9
+Kelantan,Pasir Mas,11.4
+Kelantan,Pasir Puteh,17.6
+Kelantan,Tanah Merah,11.6
+Kelantan,Tumpat,8.0
+Melaka,Alor Gajah,11.4
+Melaka,Jasin,10.0
+Melaka,Melaka Tengah,10.0
+Negeri Sembilan,Jelebu,27.5
+Negeri Sembilan,Jempol,21.4
+Negeri Sembilan,Kuala Pilah,27.8
+Negeri Sembilan,Port Dickson,16.7
+Negeri Sembilan,Rembau,19.9
+Negeri Sembilan,Seremban,6.2
+Negeri Sembilan,Tampin,15.1
+Pahang,Bentong,0.3
+Pahang,Bera,18.5
+Pahang,Cameron Highlands,1.7
+Pahang,Jerantut,14.3
+Pahang,Kuantan,5.1
+Pahang,Lipis,0.8
+Pahang,Maran,7.9
+Pahang,Pekan,8.5
+Pahang,Raub,0.8
+Pahang,Rompin,3.9
+Pahang,Temerloh,13.1
+Perak,Bagan Datuk,18.6
+Perak,Batang Padang,18.5
+Perak,Hilir Perak,15.4
+Perak,Hulu Perak,11.6
+Perak,Kampar,22.4
+Perak,Kerian,9.2
+Perak,Kinta,10.0
+Perak,Kuala Kangsar,12.8
+Perak,Manjung,7.6
+Perak,Muallim,10.9
+Perak,Perak Tengah,15.9
+Perak,Selama,11.5
+Perak,Larut & Matang,7.9
+Pulau Pinang,Barat Daya,7.5
+Pulau Pinang,Timur Laut,14.3
+Pulau Pinang,S.P.Tengah,17.4
+Pulau Pinang,S.P.Utara,18.0
+Pulau Pinang,S.P. Selatan,18.7
+Sabah,Beaufort,25.3
+Sabah,Beluran,17.0
+Sabah,Kalabakan,35.5
+Sabah,Keningau,11.5
+Sabah,Kinabatangan,10.4
+Sabah,Kota Belud,17.0
+Sabah,Kota Kinabalu,7.7
+Sabah,Kota Marudu,38.8
+Sabah,Kuala Penyu,30.4
+Sabah,Kudat,32.3
+Sabah,Kunak,26.1
+Sabah,Lahad Datu,3.4
+Sabah,Nabawan,15.9
+Sabah,Papar,9.0
+Sabah,Penampang,5.9
+Sabah,Pitas,44.6
+Sabah,Putatan,3.4
+Sabah,Ranau,27.9
+Sabah,Sandakan,12.0
+Sabah,Semporna,24.0
+Sabah,Sipitang,9.0
+Sabah,Tambunan,13.9
+Sabah,Tawau,13.0
+Sabah,Telupid,12.2
+Sabah,Tenom,17.7
+Sabah,Tongod,28.0
+Sabah,Tuaran,13.9
+Sabah,Membakut,21.4
+Sarawak,Asajaya,26.2
+Sarawak,Bau,17.8
+Sarawak,Belaga,27.3
+Sarawak,Beluru,11.6
+Sarawak,Betong,23.9
+Sarawak,Bintulu,3.2
+Sarawak,Bukit Mabong,54.2
+Sarawak,Dalat,31.9
+Sarawak,Daro,27.7
+Sarawak,Julau,38.0
+Sarawak,Kabong,34.1
+Sarawak,Kanowit,33.3
+Sarawak,Kapit,36.2
+Sarawak,Kuching,7.9
+Sarawak,Lawas,28.1
+Sarawak,Limbang,31.1
+Sarawak,Lundu,26.9
+Sarawak,Maradong,37.2
+Sarawak,Marudi,17.7
+Sarawak,Matu,27.3
+Sarawak,Miri,3.5
+Sarawak,Mukah,18.8
+Sarawak,Pakan,30.9
+Sarawak,Pusa,42.7
+Sarawak,Samarahan,7.2
+Sarawak,Saratok,32.9
+Sarawak,Sarikei,20.5
+Sarawak,Sebauh,17.4
+Sarawak,Selangau,20.2
+Sarawak,Serian,25.5
+Sarawak,Sibu,10.1
+Sarawak,Simunjan,35.5
+Sarawak,Song,40.8
+Sarawak,Sri Aman,25.2
+Sarawak,Subis,4.7
+Sarawak,Tanjung Manis,35.9
+Sarawak,Tatau,6.5
+Sarawak,Tebedu,46.2
+Sarawak,Telang Usan,10.0
+Sarawak,Lubok antu,23.2
+Sarawak,Gedong,35.7
+Sarawak,Sebuyau,53.6
+Sarawak,Siburan,16.7
+Sarawak,Pantu,60.0
+Sarawak,Lingga,45.8
+Selangor,Gombak,9.8
+Selangor,Klang,12.0
+Selangor,Kuala Langat,2.2
+Selangor,Kuala Selangor,21.0
+Selangor,Petaling,10.8
+Selangor,Sabak Bernam,25.7
+Selangor,Sepang,1.1
+Selangor,Ulu Langat,0.3
+Selangor,Ulu Selangor,16.7
+Terengganu,Besut,14.2
+Terengganu,Dungun,12.4
+Terengganu,Kemaman,6.7
+Terengganu,Kuala Nerus,2.4
+Terengganu,Kuala Terengganu,9.4
+Terengganu,Marang,13.9
+Terengganu,Setiu,7.7
+Terengganu,Hulu,14.8

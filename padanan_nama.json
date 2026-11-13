@@ -1,0 +1,32 @@
+[
+  {
+    "state": "Perak",
+    "nama_asal": "Larut & Matang",
+    "nama_peta": "Larut Dan Matang"
+  },
+  {
+    "state": "Pulau Pinang",
+    "nama_asal": "S.P.Tengah",
+    "nama_peta": "Seberang Perai Tengah"
+  },
+  {
+    "state": "Pulau Pinang",
+    "nama_asal": "S.P.Utara",
+    "nama_peta": "Seberang Perai Utara"
+  },
+  {
+    "state": "Pulau Pinang",
+    "nama_asal": "S.P. Selatan",
+    "nama_peta": "Seberang Perai Selatan"
+  },
+  {
+    "state": "Sarawak",
+    "nama_asal": "Lubok antu",
+    "nama_peta": "Lubok Antu"
+  },
+  {
+    "state": "Terengganu",
+    "nama_asal": "Hulu",
+    "nama_peta": "Hulu Terengganu"
+  }
+]
