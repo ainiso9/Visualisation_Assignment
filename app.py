@@ -148,7 +148,7 @@ selected = df.sort_values(
 ).head(number)
 
 st.caption(
-    "Summary box, histogram dan peta menggunakan semua daerah "
+    "Summary box, histogram dan box plot menggunakan semua daerah "
     "dalam skop negeri yang dipilih. Carta bar menggunakan "
     "bilangan daerah yang dipilih di sidebar. Jika nilai seri "
     "pada had paparan, susunan nama menentukan rekod yang dipaparkan."
@@ -225,112 +225,80 @@ st.caption(
     "dan slider bilangan daerah hanya mempengaruhi carta bar."
 )
 
-# GRAF 3: PETA
-st.subheader("3. Taburan Geografi")
+# GRAF 3: BOX PLOT
+st.subheader("3. Taburan Nilai Mengikut Negeri")
 
-map_data = df[["state", "district", value]].copy()
+# Gunakan semua rekod dalam skop negeri yang dipilih
+box_data = df[["state", "district", value]].dropna(
+    subset=[value]
+).copy()
 
-for item in aliases:
-    mask = (
-        (map_data["state"] == item["state"])
-        & (map_data["district"] == item["nama_asal"])
-    )
-    map_data.loc[mask, "district"] = item["nama_peta"]
-
-boundary_scope = boundaries.copy()
-
-if state != "Semua negeri":
-    boundary_scope = boundary_scope[
-        boundary_scope["state"] == state
-    ].copy()
-
-keys = boundary_scope[["state", "district"]].drop_duplicates()
-
-check = map_data.merge(
-    keys,
-    on=["state", "district"],
-    how="left",
-    indicator=True,
-    validate="one_to_one"
+# Susun negeri berdasarkan median nilai daerah
+susunan_negeri = (
+    box_data.groupby("state")[value]
+    .median()
+    .sort_values()
+    .index
+    .tolist()
 )
 
-unmatched = check[check["_merge"] == "left_only"]
+tinggi_graf = max(4, len(susunan_negeri) * 0.5)
 
-map_df = boundary_scope.merge(
-    map_data,
-    on=["state", "district"],
-    how="left",
-    validate="many_to_one"
+fig, ax = plt.subplots(figsize=(11, tinggi_graf))
+
+sns.boxplot(
+    data=box_data,
+    x=value,
+    y="state",
+    order=susunan_negeri,
+    color=cfg["color"],
+    showfliers=False,
+    ax=ax
 )
 
-if boundary_scope.empty:
-    st.warning("Tiada sempadan untuk negeri yang dipilih.")
+# Paparkan setiap daerah sebagai satu titik.
+# Titik turut menunjukkan daerah di luar whisker.
+sns.stripplot(
+    data=box_data,
+    x=value,
+    y="state",
+    order=susunan_negeri,
+    color="black",
+    alpha=0.5,
+    size=4,
+    jitter=0.15,
+    ax=ax
+)
 
-elif map_df[value].notna().sum() == 0:
-    st.warning("Tiada data yang dapat dipadankan pada peta.")
+ax.set_title(
+    f"Taburan {cfg['label']} Daerah Mengikut Negeri, 2024"
+)
+ax.set_xlabel(cfg["label"])
+ax.set_ylabel("Negeri")
+ax.grid(axis="x", alpha=0.3)
+ax.set_axisbelow(True)
 
-else:
-    fig, ax = plt.subplots(figsize=(14, 7))
-
-    map_df.plot(
-        column=value,
-        cmap=cfg["cmap"],
-       norm=(
-    PowerNorm(
-        gamma=0.5,
-        vmin=0,
-        vmax=max(float(df[value].max()), 1)
-    )
-    if page == "Taburan Penduduk"
-    else Normalize(
-        vmin=0,
-        vmax=max(float(df[value].max()), 1)
-    )
-),
-        edgecolor="white",
-        linewidth=0.3,
-        legend=True,
-        legend_kwds={
-            "label": cfg["label"],
-            "shrink": 0.7
-        },
-        missing_kwds={
-            "color": "lightgrey",
-            "edgecolor": "white"
-        },
-        ax=ax
-    )
-
-    ax.set_title(f"{page} Mengikut Daerah, 2024")
-    ax.set_axis_off()
-    fig.tight_layout()
-
-    st.pyplot(fig)
-    plt.close(fig)
+fig.tight_layout()
+st.pyplot(fig)
+plt.close(fig)
 
 st.caption(
-    "Kelabu: kawasan tanpa padanan data. "
-    "Padanan nama tidak menjamin sempadan fail peta "
-    "sama sepenuhnya dengan sempadan daerah tahun 2024."
+    "Setiap titik mewakili satu daerah. Garis dalam kotak "
+    "menunjukkan median nilai daerah, manakala kotak merangkumi "
+    "50% nilai tengah. Whisker menggunakan had 1.5 kali julat "
+    "antara kuartil (IQR); titik di luar whisker ialah nilai "
+    "luar biasa mengikut kaedah ini, bukan semestinya ralat data. "
+    "Bagi negeri yang hanya mempunyai satu rekod, kotak "
+    "tidak dapat menunjukkan variasi."
 )
 
-if not unmatched.empty:
-    st.warning(
-        f"{len(unmatched)} daerah tiada padanan sempadan. "
-        "Daerah ini kekal dalam analisis, tetapi tidak "
-        "dipetakan secara berasingan."
-    )
-
-    st.dataframe(
-        unmatched[["state", "district", value]],
-        hide_index=True
-    )
-
-if page == "Taburan Penduduk":
-    st.caption(
-        "Unit populasi ialah ribu orang. "
-        "Peta menunjukkan jumlah penduduk, bukan kepadatan."
-    )
+st.caption(
+    "Median dalam box plot dikira daripada nilai daerah "
+    "tanpa pemberat. Ia bukan ukuran agregat rasmi negeri. "
+    "Box plot menggunakan semua daerah dalam skop pilihan; "
+    "pilihan tertinggi/terendah dan slider hanya mempengaruhi "
+    "carta bar."
+)
 
 # INTERPRETASI
 st.subheader("Interpretasi")
@@ -348,12 +316,12 @@ st.write(
 
 st.write(
     "Carta bar membandingkan nilai daerah yang dipilih. "
-    "Histogram menunjukkan taburan nilai antara semua daerah "
-    "dalam skop pilihan, dengan ketinggian bar mewakili bilangan "
-    "daerah dalam setiap julat nilai. Peta menunjukkan taburan "
-    "geografi bagi daerah yang mempunyai padanan sempadan. "
-    "Visualisasi ini bersifat deskriptif dan tidak membuktikan "
-    "sebab perbezaan antara daerah."
+    "Histogram menunjukkan bilangan daerah dalam setiap julat "
+    "nilai bagi skop pilihan. Box plot menunjukkan median, "
+    "variasi dan nilai luar biasa dalam kalangan daerah "
+    "mengikut negeri. Ketiga-tiga graf menyokong perbandingan "
+    "dan analisis taburan, tetapi tidak membuktikan sebab "
+    "perbezaan antara daerah."
 )
 
 with st.expander("Lihat semua data dalam skop pilihan"):
