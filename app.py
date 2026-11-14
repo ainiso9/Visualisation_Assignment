@@ -5,6 +5,7 @@ import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
+from matplotlib.colors import PowerNorm
 import seaborn as sns
 
 
@@ -274,8 +275,15 @@ else:
     map_df.plot(
         column=value,
         cmap=cfg["cmap"],
+        norm=(
+    PowerNorm(
+        gamma=0.5,
         vmin=0,
-        vmax=max(float(df[value].max()), 1),
+        vmax=max(float(df[value].max()), 1)
+    )
+    if page == "Taburan Penduduk"
+    else None
+),
         edgecolor="white",
         linewidth=0.3,
         legend=True,
