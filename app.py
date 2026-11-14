@@ -275,14 +275,17 @@ else:
     map_df.plot(
         column=value,
         cmap=cfg["cmap"],
-        norm=(
+       norm=(
     PowerNorm(
         gamma=0.5,
         vmin=0,
         vmax=max(float(df[value].max()), 1)
     )
     if page == "Taburan Penduduk"
-    else None
+    else Normalize(
+        vmin=0,
+        vmax=max(float(df[value].max()), 1)
+    )
 ),
         edgecolor="white",
         linewidth=0.3,
