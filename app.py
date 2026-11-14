@@ -1,4 +1,4 @@
-from pathlib import Path
+kafrom pathlib import Path
 import json
 
 import streamlit as st
@@ -87,12 +87,12 @@ state = st.sidebar.selectbox(
 )
 
 ranking = st.sidebar.radio(
-    "Paparan carta bar dan heatmap",
+    "Paparan carta bar",
     ["Tertinggi", "Terendah"]
 )
 
 number = st.sidebar.slider(
-    "Bilangan daerah dalam carta bar dan heatmap",
+    "Bilangan daerah dalam carta bar",
     min_value=5,
     max_value=20,
     value=10
@@ -147,8 +147,8 @@ selected = df.sort_values(
 ).head(number)
 
 st.caption(
-    "Summary box dan peta menggunakan semua daerah dalam "
-    "skop negeri yang dipilih. Carta bar dan heatmap menggunakan "
+    "Summary box, histogram dan peta menggunakan semua daerah "
+    "dalam skop negeri yang dipilih. Carta bar menggunakan "
     "bilangan daerah yang dipilih di sidebar. Jika nilai seri "
     "pada had paparan, susunan nama menentukan rekod yang dipaparkan."
 )
@@ -185,35 +185,43 @@ fig.tight_layout()
 st.pyplot(fig)
 plt.close(fig)
 
-# GRAF 2: HEATMAP
-st.subheader("2. Heatmap Nilai Mengikut Daerah")
+# GRAF 2: HISTOGRAM
+st.subheader("2. Taburan Nilai Antara Daerah")
 
-heat_data = selected.set_index("Kawasan")[[value]]
-heat_data.columns = [cfg["label"]]
+# Gunakan semua daerah dalam skop negeri yang dipilih
+nilai_histogram = df[value].dropna()
 
-fig, ax = plt.subplots(figsize=(9, 7))
+fig, ax = plt.subplots(figsize=(10, 6))
 
-sns.heatmap(
-    heat_data,
-    annot=True,
-    fmt=",.0f" if cfg["unit"] == "RM" else ",.1f",
-    cmap=cfg["cmap"],
-    linewidths=0.5,
-    cbar_kws={"label": cfg["label"]},
-    ax=ax
+ax.hist(
+    nilai_histogram,
+    bins="auto",
+    color=cfg["color"],
+    edgecolor="white"
 )
 
-ax.set_xlabel("")
-ax.set_ylabel("Daerah")
-ax.set_title(f"{len(selected)} Daerah {ranking}, 2024")
-fig.tight_layout()
+ax.set_title(
+    f"Taburan {cfg['label']} Mengikut Daerah, 2024"
+)
+ax.set_xlabel(cfg["label"])
+ax.set_ylabel("Bilangan Daerah")
 
+# Bilangan daerah dipaparkan sebagai nombor bulat
+from matplotlib.ticker import MaxNLocator
+ax.yaxis.set_major_locator(MaxNLocator(integer=True))
+
+ax.grid(axis="y", alpha=0.3)
+ax.set_axisbelow(True)
+
+fig.tight_layout()
 st.pyplot(fig)
 plt.close(fig)
 
 st.caption(
-    "Heatmap ini memaparkan nilai melalui warna; "
-    "ia bukan heatmap korelasi."
+    "Histogram menggunakan semua daerah dalam skop negeri "
+    "yang dipilih. Setiap bar menunjukkan bilangan daerah "
+    "dalam sesuatu julat nilai. Pilihan tertinggi/terendah "
+    "dan slider bilangan daerah hanya mempengaruhi carta bar."
 )
 
 # GRAF 3: PETA
@@ -328,11 +336,13 @@ st.write(
 )
 
 st.write(
-    "Carta bar membandingkan nilai daerah yang dipilih, "
-    "manakala heatmap memaparkan perbezaan nilai melalui warna. "
-    "Peta menunjukkan lokasi nilai bagi daerah yang mempunyai "
-    "padanan sempadan. Visualisasi ini bersifat deskriptif "
-    "dan tidak membuktikan sebab perbezaan antara daerah."
+    "Carta bar membandingkan nilai daerah yang dipilih. "
+    "Histogram menunjukkan taburan nilai antara semua daerah "
+    "dalam skop pilihan, dengan ketinggian bar mewakili bilangan "
+    "daerah dalam setiap julat nilai. Peta menunjukkan taburan "
+    "geografi bagi daerah yang mempunyai padanan sempadan. "
+    "Visualisasi ini bersifat deskriptif dan tidak membuktikan "
+    "sebab perbezaan antara daerah."
 )
 
 with st.expander("Lihat semua data dalam skop pilihan"):
