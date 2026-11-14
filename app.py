@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import geopandas as gpd
 import matplotlib.pyplot as plt
-from matplotlib.colors import PowerNorm
+from matplotlib.colors import PowerNorm, Normalize
 import seaborn as sns
 
 
